@@ -10,6 +10,6 @@
 # 6.numba-cuda
 # 7.Multiprocess&parallelism
 # 8.process&multiprocessing
-# 9.process%queue
+# 9.process&queue
 # 10.threading 
 
