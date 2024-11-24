@@ -1,12 +1,24 @@
-#CHAPTER-1
-  #TOPOCS COVERED 
+#CHAPTER-1.
+
+#TOPICS  
+  
 #Data Parallelism
+
 #Message passing programming 
+
 #Semaphore
+
 #Serial&parallel
-#Multiprocessing
+
+#multiprocessing
+
 #numba-cuda
+
 #Multiprocess&parallelism
+
 #process&multiprocessing
+
 #process%queue
+
 #threading 
+
