@@ -14,6 +14,11 @@ This Python program uses a semaphore to synchronize access to a shared resource 
 This Python program demonstrates concurrent execution using ThreadPoolExecutor. Two tasks (task_1 and task_2) are defined and submitted to the executor, which executes them in separate threads. The tasks print messages when executed. The with statement ensures proper resource management by automatically shutting down the thread pool.
 
 # 5.multiprocessing
+This code compares the performance of multiprocessing and multithreading for a task that processes a list using the `do_something` function (imported externally). 
+   1. Multiprocessing: It spawns 10 processes, each running `do_something` with a large input size, and measures the total execution time.
+   2. Multithreading: It then creates 10 threads, similarly executing `do_something`, and measures the execution time.
+   3. The goal is to demonstrate the difference in execution times between multiprocessing (ideal for CPU-bound tasks) and multithreading (better for I/O-bound tasks).
+      
 # 6.numba-cuda
 # 7.Multiprocess&parallelism
 # 8.process&multiprocessing
