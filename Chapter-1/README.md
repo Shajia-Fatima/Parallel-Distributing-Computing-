@@ -21,12 +21,15 @@ This code compares the performance of multiprocessing and multithreading for a t
       
 # 6.numba-cuda
 This code demonstrates GPU-based parallel computing using Numba's CUDA support. Here's a summary:
-    1.GPU Kernel Definition: The vector_add function performs element-wise addition of two vectors on the GPU. Each thread processes a specific index using cuda.grid(1).
-    2.Setup and Execution: It generates two random arrays (a and b) on the host (CPU), and prepares an empty array (c) for the result. The computation is distributed across GPU threads and 
+  1.GPU Kernel Definition: The vector_add function performs element-wise addition of two vectors on the GPU. Each thread processes a specific index using cuda.grid(1).
+  2.Setup and Execution: It generates two random arrays (a and b) on the host (CPU), and prepares an empty array (c) for the result. The computation is distributed across GPU threads and 
        blocks, defined by threads_per_block and blocks_per_grid.
-    3.Validation: After the GPU computation, the result is verified against NumPy's CPU-based addition to ensure correctness. If successful, it prints "GPU computation successful!"
+  3.Validation: After the GPU computation, the result is verified against NumPy's CPU-based addition to ensure correctness. If successful, it prints "GPU computation successful!"
 
 # 7.Multiprocess&parallelism
+This code performs parallel element-wise addition of two large arrays using Python's ThreadPoolExecutor. The arrays are divided into slices, and each slice is processed by a separate thread. The computation time is measured, the result is verified for correctness, and the first 10 elements of the output are printed.
+
+
 # 8.process&multiprocessing
 # 9.process&queue
 # 10.threading 
