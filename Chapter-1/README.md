@@ -20,6 +20,12 @@ This code compares the performance of multiprocessing and multithreading for a t
    3. The goal is to demonstrate the difference in execution times between multiprocessing (ideal for CPU-bound tasks) and multithreading (better for I/O-bound tasks).
       
 # 6.numba-cuda
+This code demonstrates GPU-based parallel computing using Numba's CUDA support. Here's a summary:
+    1.GPU Kernel Definition: The vector_add function performs element-wise addition of two vectors on the GPU. Each thread processes a specific index using cuda.grid(1).
+    2.Setup and Execution: It generates two random arrays (a and b) on the host (CPU), and prepares an empty array (c) for the result. The computation is distributed across GPU threads and 
+       blocks, defined by threads_per_block and blocks_per_grid.
+    3.Validation: After the GPU computation, the result is verified against NumPy's CPU-based addition to ensure correctness. If successful, it prints "GPU computation successful!"
+
 # 7.Multiprocess&parallelism
 # 8.process&multiprocessing
 # 9.process&queue
