@@ -1,7 +1,6 @@
 
 # CHAPTER-1.
   # TOPICS  
-
 # 1.Data Parallelism
 This code generates two arrays of random floating-point numbers using NumPy, each with 1,000,000 elements. It performs element-wise addition of these arrays, leveraging NumPy's efficient internal parallelism. Finally, it measures and prints the computation time and the first 10 elements of the result.
 
@@ -11,8 +10,9 @@ This MPI-based Python code demonstrates inter-process communication using mpi4py
 # 3.Semaphore
 This Python program uses a semaphore to synchronize access to a shared resource among multiple threads. Only one thread can access the resource at a time, ensuring thread-safe execution. It creates and starts 5 threads, each acquiring the semaphore, accessing the resource, and releasing the semaphore after a 2-second simulated task.
 
-
 # 4.Serial&parallel
+This Python program demonstrates concurrent execution using ThreadPoolExecutor. Two tasks (task_1 and task_2) are defined and submitted to the executor, which executes them in separate threads. The tasks print messages when executed. The with statement ensures proper resource management by automatically shutting down the thread pool.
+
 # 5.multiprocessing
 # 6.numba-cuda
 # 7.Multiprocess&parallelism
