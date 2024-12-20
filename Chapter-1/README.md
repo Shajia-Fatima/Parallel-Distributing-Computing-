@@ -29,8 +29,27 @@ This code demonstrates GPU-based parallel computing using Numba's CUDA support. 
 # 7.Multiprocess&parallelism
 This code performs parallel element-wise addition of two large arrays using Python's ThreadPoolExecutor. The arrays are divided into slices, and each slice is processed by a separate thread. The computation time is measured, the result is verified for correctness, and the first 10 elements of the output are printed.
 
-
 # 8.process&multiprocessing
+This code demonstrates the use of Python's multiprocessing module to run two separate processes concurrently.
+  1.Processes: It creates two processes: one for printing the square of a number and another for printing the cube.
+  2.Start and Join: The processes are started using start(), and join() is used to ensure the main program waits for both processes to 
+    complete before printing "Processes finished executing".
+  3.Execution: The square and cube calculations for the number 10 are done in parallel.
+
 # 9.process&queue
+This code demonstrates producer-consumer interaction using Python's `multiprocessing` module. The producer generates data and puts it in a shared queue, while the consumer retrieves and processes the data. The processes are synchronized using `join()` to ensure they complete before the program finishes.
+
 # 10.threading 
+This code demonstrates the use of multithreading to compute the Fibonacci sequence. Here's a brief summary:
+  1.Fibonacci Calculation: The function calc_fibonacci recursively calculates the Fibonacci number for a given n.
+  2.Multithreading: Four threads are created, each running the calc_fibonacci function with an argument of 30. The threads start concurrently and each begins the Fibonacci calculation.
+  3.Synchronization: join() ensures the main program waits for all threads to complete before finishing.
+Note: Due to the recursive nature of calc_fibonacci, the code may run slowly for large values like 30, especially with multithreading since the calls are CPU-bound.
+
+
+
+
+
+
+
 
