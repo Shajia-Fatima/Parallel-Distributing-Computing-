@@ -17,10 +17,24 @@ This code demonstrates the producer-consumer problem using Python's `threading.E
 This code demonstrates the use of multiple threads to perform tasks concurrently. It defines a custom MyThreadClass that inherits from the Thread class and overrides the run() method. Each thread prints its name, the process ID, and sleeps for a randomly chosen duration between 1 and 10 seconds before completing. In the main() function, nine threads are created with random durations, started, and joined, ensuring the program waits for all threads to finish before exiting. The program also tracks and prints the total execution time, showing how long it takes to execute all threads concurrently. Each thread operates independently, but the main program ensures that all threads complete before printing "End" and displaying the total time taken.
 
 # Thread Lock
-This code demonstrates the use of threading with a lock to manage concurrent execution. The `MyThreadClass` creates threads that each print their name and process ID, then sleep for a random duration. A `Lock` is used to ensure that only one thread runs at a time, preventing race conditions. In the `main()` function, nine threads are created and started, then joined to ensure the main program waits for all threads to finish. The program calculates and prints the total execution time, showing how long it takes for all threads to complete their tasks sequentially due to the lock.
+The key difference between the two codes is in how the lock (`threadLock`) is handled and the timing of when it is acquired and released:
+1. First Code (Lock before and after sleep):
+   - The lock is acquired before printing the thread's name and process ID and is released right after the print statement, before the thread sleeps.
+   - This ensures that only one thread can print at a time, and other threads are blocked until the lock is released.
+   - The sleep operation does not hold the lock, meaning threads can potentially execute other tasks or acquire the lock once they are done sleeping.
+2. Second Code (Lock only around print statement):
+   - The lock is acquired only around the printing of the thread's name and process ID and is released immediately after printing.
+   - After that, the thread sleeps without holding the lock, allowing other threads to run and acquire the lock while the current thread is sleeping.
+   - This reduces the contention for the lock and improves efficiency since the sleep period does not block other threads from acquiring the lock and executing.
+ Why the Answers Differ:
+   - Concurrency Control: In the first code, the lock is held for a longer time (including while the thread is sleeping), which can reduce concurrency, as no other thread can run during that period. In the second code, the lock is only held briefly while printing, allowing better parallel execution during the sleep period, as the lock is released before the thread sleeps.
+   - Efficiency: The second code is more efficient because it allows other threads to execute while one is sleeping, whereas the first code makes all threads wait until the lock is released, even when not actively executing.
+
+In summary, the first code is more restrictive in terms of concurrency, while the second code allows for better parallelism by holding the lock for a shorter time.
+
 
 # RLock
-This code demonstrates the use of threads with a lock to ensure controlled access to shared resources. Nine threads are created, each with a random sleep duration. The `threadLock` is acquired before printing the thread's name and process ID, then released after printing to allow other threads to run. Each thread sleeps for a random time, and the main program waits for all threads to complete using `join()`. The execution time is measured and displayed, showing how long it takes for all threads to finish their tasks, with the lock ensuring no thread interference during the print statement.
+
 
 # Semaphore
 # Thread Definition
