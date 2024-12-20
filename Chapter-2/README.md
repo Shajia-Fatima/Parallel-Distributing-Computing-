@@ -32,12 +32,14 @@ The key difference between the two codes is in how the lock (`threadLock`) is ha
 
 In summary, the first code is more restrictive in terms of concurrency, while the second code allows for better parallelism by holding the lock for a shorter time.
 
-
 # RLock
-
+The provided code demonstrates thread synchronization using `RLock` in a `Box` class that manages a shared resource, `total_items`. Two threads are created: one for adding items to the box and the other for removing them. Both operations are performed in a thread-safe manner by acquiring the lock to ensure mutual exclusion while modifying `total_items`. The threads run concurrently, and each thread adds or removes a random number of items. The code ensures that no race conditions occur when modifying the shared resource, as the lock prevents simultaneous access by multiple threads.
 
 # Semaphore
+The provided code demonstrates producer-consumer synchronization using a `Semaphore`. The `consumer` thread waits for the semaphore to be released, while the `producer` thread generates a random item, logs it, and then releases the semaphore. The semaphore ensures that the consumer only proceeds after the producer has produced an item. The program runs 10 iterations, each with a producer and a consumer thread, and logs their actions with timestamps. This example showcases how semaphores are used to coordinate access to shared resources between threads.
+
 # Thread Definition
+The provided code creates 10 threads, each of which calls the `my_func` function with a unique thread number as an argument. The `my_func` function simply prints a message indicating which thread called it. The main function initializes and starts each thread in a loop, and the `join()` method ensures that the main thread waits for each thread to finish before starting the next one. This guarantees that each thread completes its execution in sequence.
 # Thread Determine
 # Thread name and processes
 # Thread with queue
