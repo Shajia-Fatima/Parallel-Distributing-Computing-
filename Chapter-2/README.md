@@ -40,6 +40,17 @@ The provided code demonstrates producer-consumer synchronization using a `Semaph
 
 # Thread Definition
 The provided code creates 10 threads, each of which calls the `my_func` function with a unique thread number as an argument. The `my_func` function simply prints a message indicating which thread called it. The main function initializes and starts each thread in a loop, and the `join()` method ensures that the main thread waits for each thread to finish before starting the next one. This guarantees that each thread completes its execution in sequence.
+
 # Thread Determine
+The code creates three threads, each responsible for executing one of the functions `function_A`, `function_B`, or `function_C`. Each function prints a message when it starts and exits, with a 2-second sleep in between. The `start()` method is called to initiate each thread, and `join()` is used to ensure that the main thread waits for all threads to finish their execution before proceeding. This ensures that the functions run concurrently, and their output is printed in the order they complete.
+
 # Thread name and processes
+The code defines a custom thread class `MyThreadClass`, inheriting from `Thread`, which prints the process ID when each thread runs. Two threads (`thread1` and `thread2`) are created and started, which execute the `run()` method in parallel. The `join()` method ensures the main program waits for both threads to finish before printing "End." However, the `os.getpid()` is mentioned in a comment but isn't used in the `run()` method. The program demonstrates basic thread creation and management in Python using the `Thread` class.
+
 # Thread with queue
+The code demonstrates thread synchronization using a `Queue` in Python. It involves two main components: a `Producer` class and a `Consumer` class. The `Producer` thread generates random numbers and adds them to a shared queue, while the `Consumer` threads repeatedly retrieve and process the items from the queue. The `Queue` is used to safely share data between threads, ensuring that one thread does not modify the queue while another is using it.
+
+The program starts one `Producer` thread and three `Consumer` threads. The `Producer` thread generates five random numbers, adds them to the queue, and notifies that an item has been added. The `Consumer` threads remove items from the queue and process them, notifying each time an item is consumed.
+The `queue.task_done()` method is used by the consumers to indicate that the task (i.e., the item retrieval) has been completed. The `join()` method ensures that the main thread waits for all threads to finish before exiting.
+
+This setup helps in managing multiple consumers working concurrently on the shared queue, making it a good example of thread synchronization.
