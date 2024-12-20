@@ -6,6 +6,7 @@
 This code generates two arrays of random floating-point numbers using NumPy, each with 1,000,000 elements. It performs element-wise addition of these arrays, leveraging NumPy's efficient internal parallelism. Finally, it measures and prints the computation time and the first 10 elements of the result.
 
 # 2.Message passing programming 
+This MPI-based Python code demonstrates inter-process communication using mpi4py. It requires at least two processes: process 0 sends a dictionary containing personal data to process 1, while process 1 receives and prints it. Additional processes remain idle without performing any operations.
 
 # 3.Semaphore
 # 4.Serial&parallel
