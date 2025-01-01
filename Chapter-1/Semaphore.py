@@ -1,5 +1,7 @@
-import threading 
-import time  
+import threading  # Import threading module
+import time  # Import time module for sleep function
+
+# Create a semaphore with 1 permit to allow one thread at a time
 sem = threading.Semaphore(1)
 
 def access_resource(thread_name):

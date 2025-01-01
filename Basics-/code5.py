@@ -14,5 +14,5 @@ class Dog(Animal):
 animal = Animal("Generic Animal")
 dog = Dog("Buddy")
 
-print(animal.speak())  # Output: Generic Animal makes a sound.
-print(dog.speak())     # Output: Buddy barks.
+print(animal.speak())  
+print(dog.speak())     
